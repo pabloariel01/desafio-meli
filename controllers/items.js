@@ -1,13 +1,27 @@
+const search = require('../models/search');
+const itemDetails = require('../models/item-details');
+
 exports.getItemById = (req, res, next) => {
-  console.log(req.param);
-  res.status(200).json({
-    message: `tagId is set to " + ${req.param('id')}`,
-  });
+  const itemId = req.params.id;
+  itemDetails(itemId)
+    .then((item) => {
+      res.status(200).json(item);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.sendStatus(400)
+    });
 };
 
 exports.getItems = (req, res, next) => {
-  console.log(req.query);
-  res.status(200).json({
-    message: `"tagId is set to " + ${req.query}`,
-  });
+  const query = req.query.q;
+  search(query)
+  .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((error) => {
+        console.log(error)
+        res.sendStatus(400)
+    });
 };
+
