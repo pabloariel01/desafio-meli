@@ -12,5 +12,7 @@ const errorController= require('./controllers/errors')
 app.use(cors(corsOptions))
 app.use('/api', apiItems);
 
+app.use(errorController.getError);
+
 app.use(errorController.get404Error);
 module.exports = app;

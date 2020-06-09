@@ -44,11 +44,11 @@ module.exports = (query) => {
 
         },
         (error) => {
-          reject(new Error('error'));
+          reject(error);
         }
       )
       .catch((error) => {
-        console.log(error);
+        reject(error)
       });
   });
 };

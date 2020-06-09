@@ -11,7 +11,7 @@ class DescribedItem extends Item {
       return this.getItemDescription().then((description) => {
         this.description = description;
       });
-    });
+    }).catch(error=> Promise.reject(error));
   }
 
   getPublicInformation() {
@@ -26,7 +26,7 @@ class DescribedItem extends Item {
       .get(this.enpointUrl + this.id + '/description')
       .then((description) => {
         return description.data.plain_text;
-      });
+      }).catch(error=>next(error));
   }
 }
 
