@@ -14,6 +14,7 @@ function App() {
           </header>
           <div className="container">
             <div className="content">
+            <div className="full-width">
               <Switch>
                 {/* <Route path='/' exact render={}/> */}
                 <Route path="/items">
@@ -21,6 +22,7 @@ function App() {
                 </Route>
                 <Route path="/items:id" />
               </Switch>
+              </div>
             </div>
           </div>
         </div>

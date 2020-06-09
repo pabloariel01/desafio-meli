@@ -23,7 +23,7 @@ const SearchBar = (props) => {
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    history.push(`/items?search=${searchData.search}`)
+    history.push({pathname:'/items',search: `?search=${searchData.search}`})
     
   }
   return (
