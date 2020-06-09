@@ -1,0 +1,8 @@
+@import 'src/assets/sass/abstracts/colors.scss';
+
+.nav-header{
+    background-color: map-get($color-map , yellow-1 );
+    display:block;
+    align-items: center;
+    justify-content: center;
+}

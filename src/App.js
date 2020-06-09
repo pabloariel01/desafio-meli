@@ -1,25 +1,29 @@
 import React from 'react';
 import './App.scss';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Header from './containers/header/header.js';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './containers/header/header';
+import SearchResults from './containers/search-result/search-result';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-        <Header />
-  
-
-        </header>
-
-        <Switch>
-          {/* <Route path='/' exact render={}/> */}
-          <Route path='/items' />
-          <Route path='/items:id' />
-
-        </Switch>
+      <div className="App wrapper">
+        <div className="full-width">
+          <header className="App-header">
+            <Header />
+          </header>
+          <div className="container">
+            <div className="content">
+              <Switch>
+                {/* <Route path='/' exact render={}/> */}
+                <Route path="/items">
+                  <SearchResults />
+                </Route>
+                <Route path="/items:id" />
+              </Switch>
+            </div>
+          </div>
+        </div>
       </div>
     </BrowserRouter>
   );

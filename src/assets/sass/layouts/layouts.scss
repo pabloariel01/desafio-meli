@@ -1,19 +1,35 @@
 @import '../abstracts/default.settings.scss';
 @import '../abstracts/colors.scss';
 
-.container {
-    max-width: $max_content_width;
-    margin: 0 auto;
-    padding-left: $gutter;
-    padding-right: $gutter;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-  
-  }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
 
-  .content {
-    background-color: map-get($color-map , light-gray-background );
-    width: 100%;
-  
-  }
+.content {
+  grid-area: content;
+}
+
+.container {
+  padding-left: $gutter;
+  padding-right: $gutter;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+grid-template-columns: 10fr;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: 
+  ". content  .";
+
+}
+
+.page-content {
+  background-color: map-get($color-map, light-gray-background);
+  width: 100%;
+}
+
+.full-width{
+  width: 100%;
+}
