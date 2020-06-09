@@ -1,0 +1,40 @@
+@import 'assets/sass/abstracts/colors';
+@import 'assets/sass/abstracts/default.settings';
+.list-item {
+  display: flex;
+
+  img {
+    margin: 16px;
+    height: 180px;
+    width: 180px;
+    border-radius: 4px;
+  }
+
+  &__description {
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+
+    &__price {
+      font-size: 24px;
+      color: map-get($color-map , darker-gray);
+      margin-bottom: 32px;
+       img {
+        height:20px;
+        width:20px;
+        margin: 0;
+        margin-left: $item-margin;
+      }
+    }
+
+    &__location{
+        font-size: 12px;
+        color: map-get($color-map , dark-gray);
+        color: map-get($color-map , darker-gray);
+
+    }
+
+    &__title{
+        font-size: 18px;;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Breadcrumb = (props) => {
   const { categories } = props;
-  let breadcrumbList = [];
+  let breadcrumbList = null;
 
   if (categories) {
     breadcrumbList = categories.map((category, i) => {

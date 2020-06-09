@@ -1,31 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './search-bar.scss';
 import logo from 'assets/images/Logo_ML.png';
 import searchImg from 'assets/images/ic_Search.png';
 import { searchPlaceholder } from 'constants/constants';
-import { useHistory } from 'react-router-dom';
-
+import { useHistory, useLocation } from 'react-router-dom';
 
 const searchValue = Object.freeze({
-  search: ""
+  search: '',
 });
 
 const SearchBar = (props) => {
   const [searchData, updateSearchData] = React.useState(searchValue);
   const history = useHistory();
+  const location = useLocation();
 
-  const handleChange= (e)=>{
+  useEffect(() => {
+    let searchQuery = location.search;
+    searchQuery = decodeURI(searchQuery).replace('?search=', '');
+    console.log(searchQuery, searchData.search);
+    if (searchQuery && !searchData.search) {
+      updateSearchData({
+        ...searchData,
+        search: searchQuery,
+      });
+    }
+  }, [location,searchData]);
+
+  const handleChange = (e) => {
     updateSearchData({
       ...searchData,
-      search: e.target.value.trim()
+      search: e.target.value.trim(),
+    });
+  };
 
-    })
-  }
-  const handleSubmit=(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    history.push({pathname:'/items',search: `?search=${searchData.search}`})
-    
-  }
+    history.push({
+      pathname: '/items',
+      search: `?search=${searchData.search}`,
+    });
+  };
   return (
     <div className="container">
       <div className="content">

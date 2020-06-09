@@ -17,10 +17,11 @@ function App() {
             <div className="full-width">
               <Switch>
                 {/* <Route path='/' exact render={}/> */}
-                <Route path="/items">
+                <Route exact path="/items">
                   <SearchResults />
                 </Route>
-                <Route path="/items:id" />
+                <Route exact  path="/items:id" />
+                
               </Switch>
               </div>
             </div>
