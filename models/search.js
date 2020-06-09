@@ -15,7 +15,6 @@ module.exports = (query) => {
       )
       .then(
         async (result) => {
-          // console.log(result.data.results)
           const results = result.data.results;
           itemSearch = await results.reduce(
             async (prev, curr) => {
