@@ -9,7 +9,7 @@ exports.getError=(error, req, res, next) => {
   res.json({
     error: {
       code: error.status,
-      message: error.message
+      message: error.message,
     }
   });
 };

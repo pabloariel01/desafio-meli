@@ -10,6 +10,6 @@ module.exports = (itemId) => {
 
         resolve(categories);
       })
-    }).catch(error=>reject(error));
+    }).catch(error=>reject(error.response.data));
   });
 };

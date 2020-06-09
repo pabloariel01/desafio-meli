@@ -10,6 +10,6 @@ module.exports = async (itemId) => {
         item: item.getPublicInformation(),
       };
       resolve(currItem);
-    }).catch(error => {reject(error)});
+    }).catch(error => reject(error.response.data));
   });
 };

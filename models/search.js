@@ -42,13 +42,10 @@ module.exports = (query) => {
             resolve(itemSearch);
           })
 
-        },
-        (error) => {
-          reject(error);
         }
       )
       .catch((error) => {
-        reject(error)
+        reject((error.response.data))
       });
   });
 };
