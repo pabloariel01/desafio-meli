@@ -1,7 +1,7 @@
 const axios = require('axios');
-const authorFactory = require('./author');
-const categoriesModel = require('./categorie');
-const ItemFactory = require('./item-factory');
+const authorFactory = require('./classes/author');
+const categoriesModel = require('./classes/categorie');
+const ItemFactory = require('./classes/item-factory');
 
 module.exports = (query) => {
   const limit = 4;

@@ -1,15 +1,20 @@
-const itemFactory = require('./item-factory');
-const authorFactory = require('./author');
-
+const itemFactory = require('./classes/item-factory');
+const authorFactory = require('./classes/author');
+const categoriesModel = require('./classes/categorie')
 module.exports = async (itemId) => {
   return new Promise(async (resolve, reject) => {
     const item = itemFactory('detailed', itemId);
-    item.getItemInformation().then((x) => {
+    item.getItemInformation().then(async(x) => {
       const currItem = {
         author: authorFactory(),
         item: item.getPublicInformation(),
       };
-      resolve(currItem);
+
+      await categoriesModel(item.category).then(categories=>{
+            
+        currItem.categories=categories;
+        resolve(currItem);
+      })
     }).catch(error => reject(error.response.data));
   });
 };

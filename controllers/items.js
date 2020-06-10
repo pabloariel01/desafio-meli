@@ -27,14 +27,12 @@ exports.getItems = (req, res, next) => {
 
 
 exports.getItemCategories = (req, res, next) => {
-  console.log('ENTERS Categories')
     const itemId = req.params.id;
     categoryDetails(itemId)
     .then((item) => {
       res.status(200).json(item);
     })
     .catch((error) => {
-      console.log(error)
       next(error)
     });
 
