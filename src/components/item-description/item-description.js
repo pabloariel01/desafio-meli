@@ -38,6 +38,7 @@ const ItemDescription = (props) => {
             )}
           </p>
           <button
+            tabIndex="0"
             className="item-layout__header__details__button"
             onClick={buyItem}
           >
