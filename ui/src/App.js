@@ -5,9 +5,11 @@ import Header from './containers/header/header';
 import SearchResults from './containers/search-result/search-result';
 import Details from 'containers/details/details'
 import NotFound from 'containers/errors/not-found';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <div className="Appwrapper">
         <div className="full-width">
@@ -35,6 +37,7 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
