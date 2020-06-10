@@ -18,6 +18,7 @@ class Item {
         this.condition = data.condition;
         this.free_shipping = data.shipping.free_shipping;
         this.sold_quantity = data.sold_quantity;
+        this.location = data.seller_address.city.name;
       });
   }
 
@@ -29,6 +30,7 @@ class Item {
       picture: this.picture,
       condition: this.condition,
       free_shipping: this.free_shipping,
+      location:this.location
     };
   }
 }
