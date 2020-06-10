@@ -1,7 +1,8 @@
 export const searchPlaceholder= "Nunca dejes de buscar";
 
 export const currencies={
-    'ARS':'$'
+    'ARS':'$',
+    'USD':'U$S'
 }
 
 // no locaton in endpoints

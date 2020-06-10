@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { useHistory } from 'react-router-dom';
 
 const NotFound=()=>{
@@ -8,7 +9,7 @@ const NotFound=()=>{
         history.push('/');
       }, [history]);
     
-      return(null)
+      return(<div></div>)
 }
 
 export default NotFound;

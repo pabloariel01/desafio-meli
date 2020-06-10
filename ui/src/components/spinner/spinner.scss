@@ -1,0 +1,35 @@
+@import 'src/assets/sass/abstracts/colors.scss';
+
+.spinner{
+
+    &-overlay{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom:0;
+        background-color: rgba(95, 95, 95, 0.45);
+        overflow:visible;
+
+    }
+
+    &__loader {
+    border: 16px solid map-get($color-map , light-gray-background ); 
+    border-top: 16px solid map-get($color-map , blue-1);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    opacity:1;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+  }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

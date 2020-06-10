@@ -6,7 +6,7 @@ import shipping from 'assets/images/ic_shipping.png';
 import { conditions } from 'constants/constants';
 
 const ItemDescription = (props) => {
-  const { author, item } = props.details;
+  const { item } = props.details;
   const clickHandler = props.onClick;
   const itemCondition = `${conditions[item.condition]} - ${item.sold_quantity} vendidos`;
 
