@@ -11,13 +11,6 @@ const ListItem = (props) => {
     onClick(details.id);
   };
 
-// TODO: fix
-//this fixes the missing location in endpoints 
-  function getLocation(min, max) {
-      const maximum=locations.length -1;
-      const location=Math.floor(Math.random() * (maximum  + 1))
-    return locations[location]
-  }
 
   return (
     <div onClick={clicked} className="list-item" tabIndex="0">
@@ -41,7 +34,7 @@ const ListItem = (props) => {
             </div>
           
         </div>
-        <div className="list-item__description__location">{getLocation()}</div>
+        <div className="list-item__description__location">{details.location}</div>
       </div>
     </div>
   );
