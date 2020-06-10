@@ -20,7 +20,7 @@ const ListItem = (props) => {
   }
 
   return (
-    <div onClick={clicked} className="list-item">
+    <div onClick={clicked} className="list-item" tabIndex="0">
       <div className="list-item__ImageHolder">
         <img src={details.picture} alt="Product" />
       </div>

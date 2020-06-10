@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import './search-bar.scss';
 import logo from 'assets/images/Logo_ML.png';
 import searchImg from 'assets/images/ic_Search.png';
@@ -10,21 +10,20 @@ const searchValue = Object.freeze({
 });
 
 const SearchBar = (props) => {
-  const [searchData, updateSearchData] = React.useState(searchValue);
+  const [searchData, updateSearchData] = useState(searchValue);
   const history = useHistory();
   const location = useLocation();
 
   useEffect(() => {
     let searchQuery = location.search;
     searchQuery = decodeURI(searchQuery).replace('?search=', '');
-    console.log(searchQuery, searchData.search);
     if (searchQuery && !searchData.search) {
       updateSearchData({
         ...searchData,
         search: searchQuery,
       });
     }
-  }, [location,searchData]);
+  }, [location]);
 
   const handleChange = (e) => {
     updateSearchData({

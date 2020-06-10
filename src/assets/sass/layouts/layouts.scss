@@ -17,7 +17,6 @@
   display: grid;
   margin: 0 auto;
   position: relative;
-grid-template-columns: 10fr;
   box-sizing: border-box;
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-areas: 
@@ -32,4 +31,10 @@ grid-template-columns: 10fr;
 
 .full-width{
   width: 100%;
+}
+
+.content-body{
+  background-color:white;
+  border-radius: 4px;
+  margin-bottom: 30px;
 }

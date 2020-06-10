@@ -3,16 +3,18 @@ import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './containers/header/header';
 import SearchResults from './containers/search-result/search-result';
+import Details from 'containers/details/details'
+import NotFound from 'containers/errors/not-found';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App wrapper">
+      <div className="Appwrapper">
         <div className="full-width">
-          <header className="App-header">
+          <header className="full-width">
             <Header />
           </header>
-          <div className="container">
+          <div className="container app">
             <div className="content">
             <div className="full-width">
               <Switch>
@@ -20,8 +22,12 @@ function App() {
                 <Route exact path="/items">
                   <SearchResults />
                 </Route>
-                <Route exact  path="/items:id" />
-                
+                <Route path="/items/:id" >
+                <Details />
+                </Route>
+                <Route path="*">
+                  <NotFound />
+               </Route>
               </Switch>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation ,useHistory } from 'react-router-dom';
 import Breadcrumb from 'components/breadcrumb/breadcrumb';
 import ListItem from 'components/list-item/list-item';
+import {useHandleError} from 'utils/utils'
 
 const searchResult = Object.freeze({
   author: {
@@ -18,6 +19,7 @@ const SearchResults = () => {
   const history = useHistory();
 
   const [searchData, updateSearchData] = useState(searchResult);
+  
 
   useEffect(() => {
     let searchQuery = location.search;
@@ -31,7 +33,6 @@ const SearchResults = () => {
   }, [searchEndpoint, location]);
 
   const navigateItem =(itemId) => {
-   console.log(itemId)
    history.push(`/items/${itemId}`);
   };
 
@@ -44,7 +45,9 @@ const SearchResults = () => {
   return (
     <div>
       <Breadcrumb categories={searchData.categories}></Breadcrumb>
+      <div className="content-body">
       {items}
+      </div>
     </div>
   );
 };

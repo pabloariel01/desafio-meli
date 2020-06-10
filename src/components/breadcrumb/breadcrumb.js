@@ -3,9 +3,9 @@ import React from 'react';
 
 const Breadcrumb = (props) => {
   const { categories } = props;
-  let breadcrumbList = null;
+  let breadcrumbList = [];
 
-  if (categories) {
+  if (categories.length) {
     breadcrumbList = categories.map((category, i) => {
       return <span key={i}>{category}</span>;
     });

@@ -12,3 +12,6 @@ export const locations = [
 'Caba',
 'Rosario'
 ]
+
+export const BUY ='comprar';
+export const ProductDescription= "Descripción del Producto"
