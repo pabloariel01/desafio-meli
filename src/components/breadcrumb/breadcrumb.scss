@@ -1,0 +1,19 @@
+@import 'src/assets/sass/abstracts/colors.scss';
+
+.Breadcrumb{
+    margin: 16px 0;
+    font-size:14px;
+    color:map-get($color-map, light-gray);
+
+    & span{
+        &:not(:last-child):after{
+        content: '>';
+        padding: 0 5px;
+        }
+
+        &:last-child{
+            color:map-get($color-map, dark-gray);
+            font-weight: 400;
+        }
+    }
+}

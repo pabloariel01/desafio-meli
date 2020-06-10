@@ -1,0 +1,41 @@
+@import '../abstracts/default.settings.scss';
+@import '../abstracts/colors.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+
+.content {
+  grid-area: content;
+}
+
+.container {
+  min-width:1200px;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: 
+  ". content  .";
+
+}
+
+.page-content {
+  background-color: map-get($color-map, light-gray-background);
+  width: 100%;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.content-body{
+  background-color:white;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}

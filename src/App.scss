@@ -1,0 +1,10 @@
+@import 'assets/sass/main.scss';
+@import 'assets/sass/abstracts/colors.scss';
+
+.app {
+  background-color: map-get($color-map, light-gray-background);
+  min-height: 990px;
+}
+.Appwrapper{
+    min-width: 1000px;
+}

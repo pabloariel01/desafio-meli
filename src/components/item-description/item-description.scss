@@ -1,0 +1,70 @@
+@import 'src/assets/sass/abstracts/colors.scss';
+$smallgap:16px;
+$largegap:32px;
+.item-layout{
+    // display:block;
+    padding: 32px;
+    &__header{
+        display:grid;
+        grid-template-columns: 7fr 3fr;
+        margin-bottom:$largegap;
+
+        &__picture{
+            img{
+                height:680px;
+                width:680px;
+
+            }
+        }
+
+        &__details{
+            &__condition{
+                font-size:14px;
+                color: map-get($color-map ,dark-gray);
+                margin:0 0 $smallgap 0;
+            }
+            &__title{
+                font-size:24px;
+                color: map-get($color-map ,darker-gray);
+                margin:0 0 $largegap 0;
+            }
+            &__price{
+                font-size:46px;
+                color: map-get($color-map ,darker-gray);
+                margin: 0 0 $largegap 0;
+                &-freeshipping{
+                    height: 30px;
+                    width: 30px;
+                    position: relative;
+                    bottom: 10px;
+                }
+            }
+            &__button{
+                padding:5px;
+                font-size:24px;
+                color: white;
+                background-color: map-get($color-map ,blue-1);
+                border:1px solid map-get($color-map ,blue-1);
+                border-radius:4px;
+                width: 100%;
+                display: block;
+            }
+
+        }
+    }
+    &__description{
+        margin-right:32px;
+    
+        &__title{
+            font-size:28px;
+            color: map-get($color-map ,darker-gray);
+            margin: 0 0 $largegap 0;
+        }
+
+        &__detail{
+            font-size:16px;
+            color: map-get($color-map ,light-gray);
+            margin: 0 0 $largegap 0;
+        }
+    }
+}
