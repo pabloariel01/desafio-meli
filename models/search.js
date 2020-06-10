@@ -1,5 +1,4 @@
 const axios = require('axios');
-const authorFactory = require('./classes/author');
 const categoriesModel = require('./classes/categorie');
 const ItemFactory = require('./classes/item-factory');
 
@@ -31,7 +30,6 @@ module.exports = (query) => {
               return prevItem;
             },
             Promise.resolve({
-              author: authorFactory(),
               categories: [],
               items: [],
             })

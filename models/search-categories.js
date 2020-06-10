@@ -8,7 +8,7 @@ module.exports = (itemId) => {
 
       await categoriesModel(item.category).then(categories=>{
 
-        resolve(categories);
+        resolve({categories});
       })
     }).catch(error=>reject(error.response.data));
   });
