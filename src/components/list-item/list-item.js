@@ -1,7 +1,6 @@
 import './list-item.scss';
 import React from 'react';
 import { formPrice } from 'utils/utils';
-import { locations } from 'constants/constants';
 import shipping from 'assets/images/ic_shipping.png';
 
 const ListItem = (props) => {

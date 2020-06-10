@@ -3,11 +3,12 @@ import './item-description.scss';
 import { formPrice } from 'utils/utils';
 import { BUY, ProductDescription } from 'constants/constants';
 import shipping from 'assets/images/ic_shipping.png';
+import { conditions } from 'constants/constants';
 
 const ItemDescription = (props) => {
   const { author, item } = props.details;
   const clickHandler = props.onClick;
-  const itemCondition = `${item.condition} - ${item.sold_quantity} vendidos`;
+  const itemCondition = `${conditions[item.condition]} - ${item.sold_quantity} vendidos`;
 
   const buyItem = () => {
     clickHandler(item);

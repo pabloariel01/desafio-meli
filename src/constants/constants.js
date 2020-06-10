@@ -15,3 +15,8 @@ export const locations = [
 
 export const BUY ='Comprar';
 export const ProductDescription= "Descripción del Producto"
+
+export const conditions= {
+    new:'Nuevo',
+    used:'Usado'
+}

@@ -23,10 +23,9 @@ const searchResult = Object.freeze({
     description: '',
     sold_quantity: 0,
   },
+  categories:[]
 });
-const CategoriesResult = Object.freeze({
-  categories: [],
-});
+
 
 const Details = () => {
   const history = useHistory();
@@ -34,8 +33,7 @@ const Details = () => {
   const location = useLocation();
 
   const [item, updateItem] = useState(searchResult);
-  const [categories, updateCategories] = useState(CategoriesResult);
-
+  
   const errorHandler = (error) => {
     switch (error) {
       case 404:
@@ -68,20 +66,6 @@ const Details = () => {
       .catch((error) => {
         errorHandler(error);
       });
-
-    fetch(searchEndpoint + searchQuery + '/categories')
-      .then((data) => {
-        if (data.status !== 200) {
-          errorHandler(data.status);
-        }
-        return data.json();
-      })
-      .then((categories) => {
-        updateCategories({ categories: categories });
-      })
-      .catch((error) => {
-        errorHandler(error);
-      });
   }, [searchEndpoint, location]);
 
   const handleBuy = (item) => {
@@ -97,7 +81,7 @@ const Details = () => {
         <title>Meli - Productos</title>
         <meta name="description" content={item.description} />
       </Helmet>
-      <Breadcrumb categories={categories.categories}></Breadcrumb>
+      <Breadcrumb categories={item.categories}></Breadcrumb>
       <div className="content-body">{itemsHolder}</div>
     </div>
   );
