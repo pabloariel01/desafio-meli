@@ -1,5 +1,5 @@
-const itemFactory = require('./classes/item-factory');
-const categoriesModel = require('./classes/categorie')
+const itemFactory = require('../models/item-factory');
+const categoriesModel = require('../models/categorie')
 
 module.exports = async (itemId) => {
   return new Promise(async (resolve, reject) => {

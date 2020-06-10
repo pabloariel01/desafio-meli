@@ -1,6 +1,6 @@
 const axios = require('axios');
-const categoriesModel = require('./classes/categorie');
-const ItemFactory = require('./classes/item-factory');
+const categoriesModel = require('../models/categorie');
+const ItemFactory = require('../models/item-factory');
 
 module.exports = (query) => {
   const limit = 4;

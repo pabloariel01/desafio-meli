@@ -1,4 +1,4 @@
-const authorFactory = require('../models/classes/author');
+const authorFactory = require('../models/author')
 
 exports.addAuthor = (req, res, next) => {
   try {
