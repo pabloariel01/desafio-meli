@@ -1,9 +1,10 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './search-bar.scss';
 import logo from 'assets/images/Logo_ML.png';
 import searchImg from 'assets/images/ic_Search.png';
 import { searchPlaceholder } from 'constants/constants';
 import { useHistory, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const searchValue = Object.freeze({
   search: '',
@@ -41,6 +42,10 @@ const SearchBar = (props) => {
   };
   return (
     <div className="container">
+      <Helmet>
+        <title>Meli</title>
+        <meta name="description" content="Venta de productos Online" />
+      </Helmet>
       <div className="content">
         <div className="searchBar ">
           <img src={logo} alt="logo" />

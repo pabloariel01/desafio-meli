@@ -12,6 +12,7 @@
 }
 
 .container {
+  min-width:1200px;
   padding-left: $gutter;
   padding-right: $gutter;
   display: grid;

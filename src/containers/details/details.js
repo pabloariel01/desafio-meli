@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import ItemDescription from 'components/item-description/item-description';
 import Breadcrumb from 'components/breadcrumb/breadcrumb';
+import { Helmet } from 'react-helmet';
 
 const searchResult = Object.freeze({
   author: {
@@ -84,15 +85,18 @@ const Details = () => {
   }, [searchEndpoint, location]);
 
   const handleBuy = (item) => {
-    console.log(item);
-    alert('buy');
+    alert('Buy Product');
   };
 
-  const itemsHolder = item ? (
-    <ItemDescription details={item} onClick={handleBuy} />
-  ) : null;
+  const itemsHolder = item 
+        ? (<ItemDescription details={item} onClick={handleBuy} />) 
+        : null;
   return (
     <div>
+       <Helmet>
+        <title>Meli - Productos</title>
+        <meta name="description" content={item.description} />
+      </Helmet>
       <Breadcrumb categories={categories.categories}></Breadcrumb>
       <div className="content-body">{itemsHolder}</div>
     </div>

@@ -7,7 +7,6 @@ import shipping from 'assets/images/ic_shipping.png';
 const ItemDescription = (props) => {
   const { author, item } = props.details;
   const clickHandler = props.onClick;
-  console.log(props, author, item);
   const itemCondition = `${item.condition} - ${item.sold_quantity} vendidos`;
 
   const buyItem = () => {

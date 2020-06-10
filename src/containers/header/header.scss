@@ -2,7 +2,8 @@
 
 .nav-header{
     background-color: map-get($color-map , yellow-1 );
-    display:block;
+    display:inline-table;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }

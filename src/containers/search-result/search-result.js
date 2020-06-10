@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation ,useHistory } from 'react-router-dom';
 import Breadcrumb from 'components/breadcrumb/breadcrumb';
 import ListItem from 'components/list-item/list-item';
-import {useHandleError} from 'utils/utils'
+import { Helmet } from 'react-helmet';
 
 const searchResult = Object.freeze({
   author: {
@@ -12,6 +12,9 @@ const searchResult = Object.freeze({
   categories: [],
   items: [],
 });
+const InitialsearchQuery = Object.freeze({
+  search:''
+});
 
 const SearchResults = () => {
   const searchEndpoint = process.env.REACT_APP_Backend_Url + 'items';
@@ -19,15 +22,16 @@ const SearchResults = () => {
   const history = useHistory();
 
   const [searchData, updateSearchData] = useState(searchResult);
+  const [searchQuery, updateSearchQuery] = useState(InitialsearchQuery);
   
 
   useEffect(() => {
     let searchQuery = location.search;
     searchQuery = encodeURI(searchQuery).replace('search=', 'q=');
+    updateSearchQuery({search: (searchQuery).replace('search=', '')})
     fetch(searchEndpoint + searchQuery)
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
         updateSearchData({ ...data });
       });
   }, [searchEndpoint, location]);
@@ -42,8 +46,14 @@ const SearchResults = () => {
       return <ListItem key={i} details={itemData} onClick={navigateItem.bind(this)}/>;
     });
   }
+
+  const pageDescription =`encntra mas ${searchQuery}`
   return (
     <div>
+      <Helmet>
+        <title>Meli - Busqueda</title>
+        <meta name="description" content={pageDescription} />
+      </Helmet>
       <Breadcrumb categories={searchData.categories}></Breadcrumb>
       <div className="content-body">
       {items}
